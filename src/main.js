@@ -10,6 +10,7 @@ import 'element-plus/dist/index.css'
 
 import '@/style/common.scss'
 import 'normalize.css'
+
 const app = createApp(App)
 
 app.use(createPinia())

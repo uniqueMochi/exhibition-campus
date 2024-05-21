@@ -1,6 +1,8 @@
 <script setup>
 import StudentStatistics from './conponment/StudentStatistics.vue'
 import BillStatistics from './conponment/BillStatistics.vue'
+import TeacherHeadcount from './conponment/TeacherHeadcount.vue'
+import StudentHeadcount from './conponment/StudentHeadcount.vue'
 </script>
 <template>
   <div class="container">
@@ -10,8 +12,8 @@ import BillStatistics from './conponment/BillStatistics.vue'
       <BillStatistics />
     </div>
     <div class="headcount">
-      <div class="teacher-headcount">老师名单</div>
-      <div class="student-headcount">学生名单</div>
+      <TeacherHeadcount />
+      <StudentHeadcount />
     </div>
   </div>
 </template>
@@ -24,18 +26,6 @@ import BillStatistics from './conponment/BillStatistics.vue'
   .headcount {
     margin-top: 32px;
     display: flex;
-
-    .teacher-headcount {
-      flex: 1;
-      background-color: #f0f0f0;
-    }
-
-    .student-headcount {
-      width: 790px;
-      height: 497px;
-      margin-left: 20px;
-      background-color: #f5f5f5;
-    }
   }
 }
 </style>

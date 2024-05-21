@@ -100,7 +100,6 @@ export default {
 .el-card {
   :deep(.el-card__body) {
     padding: 0;
-    // padding-top: 10px;
   }
 }
 </style>
