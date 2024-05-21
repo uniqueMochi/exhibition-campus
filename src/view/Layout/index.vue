@@ -20,16 +20,19 @@ import BillStatistics from './conponment/BillStatistics.vue'
   .statistics {
     display: flex;
   }
+
   .headcount {
     margin-top: 32px;
     display: flex;
+
     .teacher-headcount {
       flex: 1;
       background-color: #f0f0f0;
     }
+
     .student-headcount {
       width: 790px;
-      height: 550px;
+      height: 497px;
       margin-left: 20px;
       background-color: #f5f5f5;
     }

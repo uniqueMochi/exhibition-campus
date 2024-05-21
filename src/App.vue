@@ -3,8 +3,6 @@ import { ref } from 'vue'
 import { RouterView } from 'vue-router'
 import { Bell, InfoFilled } from '@element-plus/icons-vue'
 
-/* 当前进去页面激活索引 */
-const activeIndex = ref('1')
 const handleSelect = (key, keyPath) => {
   console.log(key, keyPath)
 }
@@ -25,18 +23,18 @@ const centerDialogVisible = ref(false)
 
         <!-- 主菜单 -->
         <el-menu
-          :default-active="activeIndex"
           class="el-menu-demo impMenu"
           mode="horizontal"
           @select="handleSelect"
           active-text-color="#1047f7"
           text-color="#aaaaaa"
+          default-active="/"
           router
         >
           <el-menu-item index="/">系统首页</el-menu-item>
-          <el-menu-item index="2">教师管理</el-menu-item>
-          <el-menu-item index="3">学生管理</el-menu-item>
-          <el-menu-item index="4">应用管理</el-menu-item>
+          <el-menu-item index="/tecaherManagement">教师管理</el-menu-item>
+          <el-menu-item index="/studentManagement">学生管理</el-menu-item>
+          <el-menu-item index="/applicationManagement">应用管理</el-menu-item>
         </el-menu>
 
         <!-- 用户模块 -->
@@ -51,23 +49,25 @@ const centerDialogVisible = ref(false)
               <InfoFilled style="cursor: pointer" />
             </el-icon>
           </li>
+          <!-- 用户信息 -->
           <li class="user-item">
             <el-avatar
               :size="50"
               src="https://mochil-web-eadnews.oss-cn-guangzhou.aliyuncs.com/1400ed8e-8deb-4f6c-9617-24ac4753b20e.jpg"
               @click="show = !show"
             />
+
+            <!-- 用户二级菜单 -->
             <transition name="el-zoom-in-top">
               <div v-show="show" class="transition-box">
-                <el-menu
-                  background-color="transparent"
-                  active-text-color="#303133"
-                >
-                  <el-menu-item index="1">个人设置</el-menu-item>
-                  <el-menu-item index="2" @click="centerDialogVisible = true"
-                    >退出操作</el-menu-item
-                  >
-                </el-menu>
+                <el-card>
+                  <el-menu active-text-color="#303133">
+                    <el-menu-item>个人设置</el-menu-item>
+                    <el-menu-item @click="centerDialogVisible = true"
+                      >退出操作</el-menu-item
+                    >
+                  </el-menu>
+                </el-card>
               </div>
             </transition>
           </li>
@@ -79,6 +79,7 @@ const centerDialogVisible = ref(false)
     </el-container>
   </div>
 
+  <!-- 警告弹窗 -->
   <el-dialog
     v-model="centerDialogVisible"
     title="退出系统"
@@ -162,9 +163,12 @@ const centerDialogVisible = ref(false)
   background-color: #ffffff;
   text-align: center;
   color: #fff;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   border-radius: 4px;
+
+  :deep(.el-card__body) {
+    padding: 0;
+  }
 
   .el-menu {
     padding: 0;

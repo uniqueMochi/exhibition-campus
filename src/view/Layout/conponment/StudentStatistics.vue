@@ -74,7 +74,6 @@ const strokeWidth = ref(10)
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-  background-color: #f5f5f5;
 
   .el-card {
     width: 290px;
@@ -84,6 +83,7 @@ const strokeWidth = ref(10)
     h2 {
       margin: 0;
     }
+
     &:nth-child(2n + 1) {
       margin-left: 0px;
     }
@@ -95,6 +95,7 @@ const strokeWidth = ref(10)
     :deep(.el-card__header) {
       border-bottom: 0;
       padding: 16px;
+
       .card-header {
         color: #7f7f7f;
       }
@@ -102,6 +103,7 @@ const strokeWidth = ref(10)
 
     :deep(.el-card__body) {
       padding: 0 16px;
+
       .count {
         margin: 0;
       }

@@ -79,7 +79,7 @@ export default {
 }
 </script>
 <template>
-  <el-card style="max-width: 628px">
+  <el-card style="max-width: 628px" shadow="hover">
     <div class="bill-statistics">
       <div
         class="echart"
@@ -93,8 +93,14 @@ export default {
 
 <style lang="scss" scoped>
 .bill-statistics {
-  margin-left: 20px;
   width: 628px;
   height: 296px;
+}
+
+.el-card {
+  :deep(.el-card__body) {
+    padding: 0;
+    // padding-top: 10px;
+  }
 }
 </style>
