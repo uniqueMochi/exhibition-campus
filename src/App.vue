@@ -54,7 +54,7 @@ const centerDialogVisible = ref(false)
           <li class="user-item">
             <el-avatar
               :size="50"
-              src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+              src="https://mochil-web-eadnews.oss-cn-guangzhou.aliyuncs.com/1400ed8e-8deb-4f6c-9617-24ac4753b20e.jpg"
               @click="show = !show"
             />
             <transition name="el-zoom-in-top">
