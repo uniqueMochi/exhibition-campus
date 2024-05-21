@@ -33,7 +33,7 @@ const centerDialogVisible = ref(false)
           text-color="#aaaaaa"
           router
         >
-          <el-menu-item index="1">系统首页</el-menu-item>
+          <el-menu-item index="/">系统首页</el-menu-item>
           <el-menu-item index="2">教师管理</el-menu-item>
           <el-menu-item index="3">学生管理</el-menu-item>
           <el-menu-item index="4">应用管理</el-menu-item>
