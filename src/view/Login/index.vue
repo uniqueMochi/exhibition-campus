@@ -53,7 +53,7 @@ const registerRules = reactive({
 </script>
 
 <template>
-  <div class="container">
+  <div class="box">
     <!-- 登录 -->
     <el-card style="width: 460px" class="login" v-if="show">
       <el-form
@@ -127,8 +127,15 @@ const registerRules = reactive({
 </template>
 
 <style lang="scss" scoped>
+.box {
+  width: 100%;
+  height: 100vh;
+  background: url('@/assets/wallhaven-x6jo5o.webp') no-repeat;
+  background-size: 100%;
+}
 .el-card {
   position: absolute;
+  opacity: 0.6;
   top: 50%; /* 相对于容器顶部定位 */
   left: 50%; /* 相对于容器左边定位 */
   transform: translate(-50%, -50%); /* 相对于自身大小进行偏移，实现居中 */
