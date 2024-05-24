@@ -34,7 +34,7 @@ const centerDialogVisible = ref(false)
           <el-menu-item index="/">系统首页</el-menu-item>
           <el-menu-item index="/tecaherManagement">教师管理</el-menu-item>
           <el-menu-item index="/studentManagement">学生管理</el-menu-item>
-          <el-menu-item index="/applicationManagement">应用管理</el-menu-item>
+          <el-menu-item index="/application">应用管理</el-menu-item>
         </el-menu>
 
         <!-- 用户模块 -->

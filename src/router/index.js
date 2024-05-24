@@ -7,6 +7,7 @@ import StudentManagement from '@/view/StudentManagement/index.vue'
 import TecaherManagement from '@/view/TecaherManagement/index.vue'
 
 import Login from '@/view/Login/index.vue'
+import Aapplication from '@/view/Aapplication/index.vue'
 
 import Test from '@/view/Test/index.vue'
 const router = createRouter({
@@ -27,6 +28,10 @@ const router = createRouter({
         {
           path: '/tecaherManagement',
           component: TecaherManagement
+        },
+        {
+          path: '/application',
+          component: Aapplication
         }
       ]
     },

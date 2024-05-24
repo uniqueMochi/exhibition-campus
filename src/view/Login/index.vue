@@ -130,12 +130,10 @@ const registerRules = reactive({
 .box {
   width: 100%;
   height: 100vh;
-  background: url('@/assets/wallhaven-x6jo5o.webp') no-repeat;
-  background-size: 100%;
+  background-color: #000;
 }
 .el-card {
   position: absolute;
-  opacity: 0.6;
   top: 50%; /* 相对于容器顶部定位 */
   left: 50%; /* 相对于容器左边定位 */
   transform: translate(-50%, -50%); /* 相对于自身大小进行偏移，实现居中 */
