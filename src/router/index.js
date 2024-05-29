@@ -5,6 +5,7 @@ import Home from '@/view/Home/index.vue'
 
 import StudentManagement from '@/view/StudentManagement/index.vue'
 import TecaherManagement from '@/view/TecaherManagement/index.vue'
+import PersonalDetails from '@/view/PersonalDetails/index.vue'
 
 import Login from '@/view/Login/index.vue'
 import Aapplication from '@/view/Aapplication/index.vue'
@@ -32,6 +33,10 @@ const router = createRouter({
         {
           path: '/application',
           component: Aapplication
+        },
+        {
+          path: '/details',
+          component: PersonalDetails
         }
       ]
     },
