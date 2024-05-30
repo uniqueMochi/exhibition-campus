@@ -70,7 +70,13 @@ const tableData = [
       </el-table-column>
     </el-table>
     <template #footer>
-      <el-button type="primary" plain color="#1047f7">查看所有</el-button>
+      <el-button
+        type="primary"
+        plain
+        color="#1047f7"
+        @click="$router.push('/studentManagement')"
+        >查看所有</el-button
+      >
     </template>
   </el-card>
 </template>

@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { Search } from '@element-plus/icons-vue'
+import router from '@/router'
 const input1 = ref('')
 
 /* 方式 */
@@ -45,6 +46,7 @@ const selectDept = (e) => {
 
 const handleClick = () => {
   console.log('click')
+  router.push('/details')
 }
 
 const tableData = [

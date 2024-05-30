@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { RouterView } from 'vue-router'
 import { Bell, InfoFilled } from '@element-plus/icons-vue'
+import router from '@/router'
 
 const handleSelect = (key, keyPath) => {
   console.log(key, keyPath)
@@ -12,6 +13,12 @@ const show = ref(false)
 
 /* 弹窗显示 */
 const centerDialogVisible = ref(false)
+
+/* 退出登录 */
+const logout = () => {
+  centerDialogVisible.value = false
+  router.push('/login')
+}
 </script>
 
 <template>
@@ -90,9 +97,7 @@ const centerDialogVisible = ref(false)
     <template #footer>
       <div class="dialog-footer">
         <el-button @click="centerDialogVisible = false">取消</el-button>
-        <el-button type="danger" @click="centerDialogVisible = false">
-          确定
-        </el-button>
+        <el-button type="danger" @click="logout"> 确定 </el-button>
       </div>
     </template>
   </el-dialog>
