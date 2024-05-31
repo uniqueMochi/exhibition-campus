@@ -1,7 +1,8 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { Search } from '@element-plus/icons-vue'
 import router from '@/router'
+import axios from 'axios'
 const input1 = ref('')
 
 /* 方式 */
@@ -49,90 +50,13 @@ const handleClick = () => {
   router.push('/details')
 }
 
-const tableData = [
-  {
-    name: '龙之介',
-    class: '高三(3)班',
-    gender: '男',
-    stuId: '22304030529',
-    phone: '13392052136',
-    email: '3191214319@qq.com',
-    entrydate: '2020-04-02'
-  },
-  {
-    name: '龙之介',
-    class: '高三(3)班',
-    gender: '男',
-    stuId: '22304030529',
-    phone: '13392052136',
-    email: '3191214319@qq.com',
-    entrydate: '2020-04-02'
-  },
-  {
-    name: '龙之介',
-    class: '高三(3)班',
-    gender: '男',
-    stuId: '22304030529',
-    phone: '13392052136',
-    email: '3191214319@qq.com',
-    entrydate: '2020-04-02'
-  },
-  {
-    name: '龙之介',
-    class: '高三(3)班',
-    gender: '男',
-    stuId: '22304030529',
-    phone: '13392052136',
-    email: '3191214319@qq.com',
-    entrydate: '2020-04-02'
-  },
-  {
-    name: '龙之介',
-    class: '高三(3)班',
-    gender: '男',
-    stuId: '22304030529',
-    phone: '13392052136',
-    email: '3191214319@qq.com',
-    entrydate: '2020-04-02'
-  },
-  {
-    name: '龙之介',
-    class: '高三(3)班',
-    gender: '男',
-    stuId: '22304030529',
-    phone: '13392052136',
-    email: '3191214319@qq.com',
-    entrydate: '2020-04-02'
-  },
-  {
-    name: '龙之介',
-    class: '高三(3)班',
-    gender: '男',
-    stuId: '22304030529',
-    phone: '13392052136',
-    email: '3191214319@qq.com',
-    entrydate: '2020-04-02'
-  },
-  {
-    name: '龙之介',
-    class: '高三(3)班',
-    gender: '男',
-    stuId: '22304030529',
-    phone: '13392052136',
-    email: '3191214319@qq.com',
-    entrydate: '2020-04-02'
-  },
-  {
-    name: '龙之介',
-    class: '高三(3)班',
-    gender: '男',
-    stuId: '22304030529',
-    phone: '13392052136',
-    email: '3191214319@qq.com',
-    entrydate: '2020-04-02'
-  }
-]
+const tableData = ref([])
 
+onMounted(async () => {
+  const res = await axios.get('https://yapi.pro/mock/408195/student')
+  console.log(res.data)
+  tableData.value = res.data
+})
 /* 当前页 */
 const currentPage = ref(1)
 
@@ -251,7 +175,7 @@ const centerDialogVisible = ref(false)
             :page-sizes="[5, 10, 15, 20, 30, 50]"
             background
             layout="total, sizes, prev, pager, next, jumper "
-            :total="400"
+            :total="tableData.length"
             @current-change="handleCurrentChange"
             @size-change="handleSizeChange"
           >

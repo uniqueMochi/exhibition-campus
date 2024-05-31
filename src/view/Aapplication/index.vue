@@ -1,7 +1,12 @@
 <script setup>
 import { ref } from 'vue'
 const eduServices = ref([
-  { id: 's001', text: '考勤记录明细', icon: 'icon-kaoqinbaobiao' },
+  {
+    id: 's001',
+    text: '考勤记录明细',
+    icon: 'icon-kaoqinbaobiao',
+    path: '/attendance'
+  },
   {
     id: 's002',
     text: '请假管理',
@@ -52,7 +57,7 @@ const logisticsServices = ref([
 
 <template>
   <div class="container">
-    <el-card shadow="never" class="box">
+    <el-card shadow="never" class="box outermost">
       <div class="container_head">
         <span class="title">应用管理</span>
       </div>
@@ -63,7 +68,11 @@ const logisticsServices = ref([
           <div class="title">教育服务</div>
           <ul class="item-nav education-nav">
             <li v-for="item in eduServices" :key="item.id">
-              <el-card shadow="hover" style="cursor: pointer">
+              <el-card
+                shadow="hover"
+                style="cursor: pointer"
+                @click="$router.push(item.path)"
+              >
                 <i class="circle" />
                 <span :class="['iconfont', item.icon]"></span>
                 <span class="text">{{ item.text }}</span>
@@ -90,7 +99,7 @@ const logisticsServices = ref([
 </template>
 
 <style lang="scss" scoped>
-.el-card {
+.outermost {
   border: 0;
 }
 

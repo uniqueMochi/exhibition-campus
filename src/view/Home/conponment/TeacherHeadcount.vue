@@ -1,3 +1,11 @@
+<script setup>
+import router from '@/router'
+
+const routerGo = () => {
+  localStorage.setItem('activePath', '/tecaherManagement')
+  router.push('/tecaherManagement')
+}
+</script>
 <template>
   <el-card class="teacher-headcount">
     <template #header>
@@ -28,12 +36,7 @@
       </li>
     </ul>
     <template #footer>
-      <el-button
-        type="primary"
-        color="#1047f7"
-        @click="$router.push('/tecaherManagement')"
-        plain
-      >
+      <el-button type="primary" color="#1047f7" @click="routerGo" plain>
         查看所有
       </el-button>
     </template>

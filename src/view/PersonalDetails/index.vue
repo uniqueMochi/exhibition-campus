@@ -1,5 +1,4 @@
 <script setup>
-import { ArrowLeft } from '@element-plus/icons-vue'
 import { ref } from 'vue'
 const activeName = ref('first')
 
@@ -26,16 +25,7 @@ const urls = [
 <template>
   <div class="container">
     <el-card class="outermost" shadow="never">
-      <div class="container_head">
-        <el-button
-          class="goback-btn"
-          type="primary"
-          :icon="ArrowLeft"
-          @click="$router.back()"
-          text
-        />
-        <span class="title">教师介绍</span>
-      </div>
+      <PageHeader>教师介绍</PageHeader>
 
       <div class="container-main">
         <div class="common-layout">
@@ -213,24 +203,6 @@ const urls = [
 
   > :deep(.el-card__body) {
     padding: 0;
-  }
-}
-
-.container_head {
-  margin: 12px 0;
-  .title {
-    height: 35px;
-    line-height: 35px;
-    font-weight: 700;
-    font-size: 18px;
-    color: #333333;
-    padding-left: 20px;
-    border-left: 5px solid #1047f7;
-  }
-
-  .el-button {
-    margin-top: -7px;
-    height: 24px;
   }
 }
 

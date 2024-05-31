@@ -1,4 +1,6 @@
 <script setup>
+import router from '@/router'
+
 const tableData = [
   {
     name: '林振杰',
@@ -49,6 +51,11 @@ const tableData = [
     enrtydate: '2024-03-01'
   }
 ]
+
+const routerGo = () => {
+  localStorage.setItem('activePath', '/studentManagement')
+  router.push('/studentManagement')
+}
 </script>
 
 <template>
@@ -70,11 +77,7 @@ const tableData = [
       </el-table-column>
     </el-table>
     <template #footer>
-      <el-button
-        type="primary"
-        plain
-        color="#1047f7"
-        @click="$router.push('/studentManagement')"
+      <el-button type="primary" plain color="#1047f7" @click="routerGo"
         >查看所有</el-button
       >
     </template>
@@ -135,7 +138,6 @@ const tableData = [
 
     .el-button {
       margin-top: 13px;
-      // margin-bottom: 23px;
       width: 250px;
       border-width: 2px;
       border-color: #1047f7;

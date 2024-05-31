@@ -5,7 +5,8 @@ import { Bell, InfoFilled } from '@element-plus/icons-vue'
 import router from '@/router'
 
 const handleSelect = (key, keyPath) => {
-  console.log(key, keyPath)
+  console.log(key)
+  console.log(keyPath)
 }
 
 /* 用户操作菜单显示 */

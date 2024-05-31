@@ -13,6 +13,7 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import '@/style/common.scss'
 import 'normalize.css'
 
+import PageHeader from '@/component/PageHeader.vue'
 const app = createApp(App)
 
 app.use(createPinia())
@@ -21,3 +22,5 @@ app.use(router)
 app.use(ElementPlus, { locale: zhCn })
 
 app.mount('#app')
+
+app.component('PageHeader', PageHeader)
